@@ -36,7 +36,7 @@ export default function AdminDashboard({ user, onLogout }) {
       let fetchedStats = { totalUsers: 0, onlineUsers: 0, accidentZonesPrevented: 3, sensorNetworkHealth: 100 };
 
       try {
-        const res = await fetch("http://localhost:5000/api/traffic/users", { headers });
+        const res = await fetch("https://sih26205.onrender.com/api/traffic/users", { headers });
         const data = await res.json();
         if (data && data.users) fetchedUsers = data.users;
       } catch (e) {
@@ -44,7 +44,7 @@ export default function AdminDashboard({ user, onLogout }) {
       }
 
       try {
-        const res = await fetch("http://localhost:5000/api/traffic/stats", { headers });
+        const res = await fetch("https://sih26205.onrender.com/api/traffic/stats", { headers });
         const data = await res.json();
         if (data) fetchedStats = data;
       } catch (e) {
